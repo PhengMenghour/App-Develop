@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
 
-// const age = 27;
-// const twiceTheAge = age * 2;
-
-String getFullName(String firstName, String lastName) {
-  // return firstName + " " + lastName;
-  return "$firstName $lastName";
-}
 
 void main() {
   var name = "Foo";
@@ -15,13 +8,29 @@ void main() {
   runApp(const MyApp());
 }
 
+// enum PersonProperties{
+//   firstName, lastName, age
+// }
+
+enum AnimalType {cat, dog, bunny}
+
+
+void test(AnimalType animalType) {
+  switch (animalType){
+    case AnimalType.bunny:
+      print("Bunny");
+      return;
+    case
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    print(getFullName("Foo", "Bar"));
+    test(AnimalType.cat);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
