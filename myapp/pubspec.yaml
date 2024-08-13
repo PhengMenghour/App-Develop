@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   easy_splash_screen:
   loading_animation_widget: ^1.2.1
+  introduction_screen: ^3.1.14
 
 dev_dependencies:
   flutter_test:
