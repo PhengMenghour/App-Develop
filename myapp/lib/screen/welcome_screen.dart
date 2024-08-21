@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:myapp/screen/onboarding_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => OnboardingScreen()),
+      );
+    });
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -26,7 +34,10 @@ class WelcomeScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(16),
-            child: Text('The best plant e-commerce & online store app of the century of your needs!', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),),
+            child: Text(
+              'The best plant e-commerce & online store app of the century of your needs!',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
+            ),
           )
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:myapp/screen/welcome_screen.dart';
+import 'package:myapp/screen/login_screen.dart';
+
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -56,7 +57,7 @@ class OnboardingScreen extends StatelessWidget {
             footer: ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (_) => WelcomeScreen()),
+                  MaterialPageRoute(builder: (_) => LoginScreen()),
                 );
               },
               child: const Text('Get Started'),
@@ -64,12 +65,12 @@ class OnboardingScreen extends StatelessWidget {
       ],
       onDone: () {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => WelcomeScreen()),
+          MaterialPageRoute(builder: (_) => LoginScreen()),
         );
       },
       onSkip: () {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => WelcomeScreen()),
+          MaterialPageRoute(builder: (_) => LoginScreen()),
         );
       },
       showSkipButton: true,

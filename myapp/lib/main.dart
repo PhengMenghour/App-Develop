@@ -3,10 +3,11 @@ import 'package:myapp/screen/chat_page.dart';
 import 'package:myapp/screen/counter_stateful_demo.dart';
 import 'package:myapp/screen/home_page.dart';
 import 'package:myapp/screen/login_page.dart';
+import 'package:myapp/screen/login_screen.dart';
 import 'package:myapp/screen/onboarding_screen.dart';
-import 'package:myapp/screen/onboarding_screen_test.dart';
 import 'package:myapp/screen/splash_screen.dart';
 import 'package:myapp/screen/welcome_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       // "/" : (context) => OnboardingScreen()
 
       // home: OnboardingScreenTest(),
-      home: OnboardingScreen(),
+      home: const LoginScreen(),
       // home: CounterStateful(buttonColor: Colors.blue),
     );
   }
