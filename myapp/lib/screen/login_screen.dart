@@ -85,12 +85,58 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Row(
+              children: [
+                Flexible(
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 0.5,
+                    indent: 60,
+                    endIndent: 5,
+                  ),
+                ),
+                Text('Or'),
+                Flexible(
+                  child: Divider(
+                    color: Colors.grey,
+                    thickness: 0.5,
+                    indent: 5,
+                    endIndent: 60,
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.all(8),
+              child: SizedBox(
+                width: 350,
+                height: 50,
+                child: ElevatedButton.icon(
+                  onPressed: () {},
+                  label: Text('Sign in with password'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.lightGreen,
+                    foregroundColor: Colors.white,
+                    shadowColor: Colors.green,
+                    elevation: 5,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)
+                    )
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Don\'t have an account?'),
+                  TextButton(onPressed: (){}, child: Text('Sign Up', style: TextStyle(color: Colors.green),),)
+                ],
+              ) 
+            ),
           ],
-          
-          
         ),
-
-        
       ),
     );
   }
