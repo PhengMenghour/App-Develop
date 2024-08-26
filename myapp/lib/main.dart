@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       // "/" : (context) => OnboardingScreen()
 
       // home: OnboardingScreenTest(),
-      home: const LoginScreen(),
+      home: const WelcomeScreen(),
       // home: CounterStateful(buttonColor: Colors.blue),
     );
   }
