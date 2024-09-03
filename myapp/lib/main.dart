@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/screen/chat_page.dart';
 import 'package:myapp/screen/counter_stateful_demo.dart';
+import 'package:myapp/screen/create_account_screen.dart';
 import 'package:myapp/screen/home_page.dart';
 import 'package:myapp/screen/login_page.dart';
 import 'package:myapp/screen/login_screen.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       // "/" : (context) => OnboardingScreen()
 
       // home: OnboardingScreenTest(),
-      home: const WelcomeScreen(),
+      home: const CreateAccountScreen(),
       // home: CounterStateful(buttonColor: Colors.blue),
     );
   }
