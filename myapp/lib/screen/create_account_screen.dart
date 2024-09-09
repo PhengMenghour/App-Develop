@@ -1,4 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/screen/home_page.dart';
+import 'package:myapp/screen/login_page.dart';
+import 'package:myapp/screen/login_screen.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
@@ -8,6 +13,8 @@ class CreateAccountScreen extends StatefulWidget {
 }
 
 class _CreateAccountScreenState extends State<CreateAccountScreen> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _rememberMe = false;
@@ -43,7 +50,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ),
                     const Text(
                       'Create Your Account',
-                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -94,11 +102,35 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    // Handle sign-up logix here
-                    final email = _emailController.text;
-                    final password = _passwordController.text;
-                    // Perform sign-up operation
+                  onPressed: () async {
+                    String email = _emailController.text.trim();
+                    String password = _passwordController.text.trim();
+
+                    try {
+                      UserCredential userCredential =
+                          await _auth.createUserWithEmailAndPassword(
+                        email: email,
+                        password: password,
+                      );
+
+                      if (userCredential.user != null) {
+                        await _firestore
+                            .collection('users')
+                            .doc(userCredential.user!.uid)
+                            .set({
+                          'email': email,
+                        });
+                        print('Sign up successful, navigating to HomePage');
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
+                      } else {
+                        print('Sign up failed, user is null');
+                      }
+                    } catch (e) {
+                      print('Failed to sign up: $e');
+                    }
                   },
                   child: const Text('Sign up'),
                   style: ElevatedButton.styleFrom(
@@ -170,3 +202,26 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
     );
   }
 }
+// Future<void> signUpWithEmailAndPassword(String email, String password, String username) async {
+//     try {
+//       // Create user with email and password in Firebase Authentication
+//       final firebaseAuth = firebase_auth.FirebaseAuth.instance;
+//       await firebaseAuth.createUserWithEmailAndPassword(
+//         email: email,
+//         password: password,
+//       );
+
+//       // Store user data in Firestore
+//       await firestore.collection('users').doc(email).set({
+//         'username': username,
+//         'email': email,
+//         // Add more user data fields as needed
+//       });
+
+//       // Navigate to home page or any other desired page after successful sign-up
+//       // Navigator.pushNamed(context, homeRoute);
+//     } catch (e) {
+//       print('Failed to sign up with email and password: $e');
+//       // Handle sign-up failure
+//     }
+//   }

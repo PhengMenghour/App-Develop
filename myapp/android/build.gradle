@@ -1,5 +1,12 @@
-plugins{
-    id 'com.google.gms.google-services' version '4.4.2' apply false
+buildscript {
+    repositories {
+        google()       // Google's Maven repository
+        mavenCentral() // Central repository for Maven
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.2'      // Match this with your Gradle version
+        classpath 'com.google.gms:google-services:4.3.15'     // Add Google Services plugin here
+    }
 }
 
 allprojects {
