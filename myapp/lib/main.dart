@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/screen/create_account_screen.dart';
+import 'package:myapp/screen/create_pin_screen.dart';
 import 'package:myapp/screen/fill_info_screen.dart';
 import 'package:myapp/screen/home_page.dart';
 import 'package:myapp/screen/login_screen.dart';
