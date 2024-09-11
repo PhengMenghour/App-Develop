@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/screen/create_account_screen.dart';
+import 'package:myapp/screen/login_to_account_screen.dart';
 import 'package:myapp/screen/onboarding_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -112,29 +114,39 @@ class LoginScreen extends StatelessWidget {
                 width: 350,
                 height: 50,
                 child: ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginToAccount()));
+                  },
                   label: Text('Sign in with password'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightGreen,
-                    foregroundColor: Colors.white,
-                    shadowColor: Colors.green,
-                    elevation: 5,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30)
-                    )
-                  ),
+                      backgroundColor: Colors.lightGreen,
+                      foregroundColor: Colors.white,
+                      shadowColor: Colors.green,
+                      elevation: 5,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30))),
                 ),
               ),
             ),
             Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Don\'t have an account?'),
-                  TextButton(onPressed: (){}, child: Text('Sign Up', style: TextStyle(color: Colors.green),),)
-                ],
-              ) 
-            ),
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Don\'t have an account?'),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CreateAccountScreen()));
+                  },
+                  child: Text(
+                    'Sign Up',
+                    style: TextStyle(color: Colors.green),
+                  ),
+                )
+              ],
+            )),
           ],
         ),
       ),

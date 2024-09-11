@@ -1,12 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/screen/chat_page.dart';
-import 'package:myapp/screen/counter_stateful_demo.dart';
 import 'package:myapp/screen/create_account_screen.dart';
+import 'package:myapp/screen/fill_info_screen.dart';
 import 'package:myapp/screen/home_page.dart';
-import 'package:myapp/screen/login_page.dart';
 import 'package:myapp/screen/login_screen.dart';
+import 'package:myapp/screen/login_to_account_screen.dart';
 import 'package:myapp/screen/onboarding_screen.dart';
 import 'package:myapp/screen/splash_screen.dart';
 import 'package:myapp/screen/welcome_screen.dart';
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
       // "/" : (context) => OnboardingScreen()
 
       // home: OnboardingScreenTest(),
-      home: const CreateAccountScreen(),
+      home: const FillInfoScreen(),
       // home: CounterStateful(buttonColor: Colors.blue),
     );
   }
