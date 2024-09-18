@@ -46,10 +46,13 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-		<string>Photo Library usage</string>
-		<key>NSCameraUsageDescription</key>
-		<string>Camera usage</string>
-		<key>NSMicrophoneUsageDescription</key>
-		<string>Microphone usage</string>
+	<string>Photo Library usage</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera usage</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Microphone usage</string>
+
+	<key>NSFaceIDUsageDescription</key>
+	<string>This app uses Face ID ti provide secure authentication</string>
 </dict>
 </plist>
