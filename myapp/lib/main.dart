@@ -9,6 +9,7 @@ import 'package:myapp/screen/home_page.dart';
 import 'package:myapp/screen/login_screen.dart';
 import 'package:myapp/screen/login_to_account_screen.dart';
 import 'package:myapp/screen/onboarding_screen.dart';
+import 'package:myapp/screen/recovery_screen.dart';
 import 'package:myapp/screen/splash_screen.dart';
 import 'package:myapp/screen/welcome_screen.dart';
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       // "/" : (context) => OnboardingScreen()
 
       // home: OnboardingScreenTest(),
-      home: const FingerprintScreen(),
+      home: const RecoveryScreen(),
       // home: CounterStateful(buttonColor: Colors.blue),
     );
   }
